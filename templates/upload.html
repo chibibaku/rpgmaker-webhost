@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPG Maker MZ Game Uploader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>RPG Maker MZ Game Uploader</h1>
+    
+    <div id="game-status" class="game-status">
+        <div class="info">Checking game status...</div>
+    </div>
+    
+    <p>Upload a ZIP file containing your RPG Maker MZ game files.</p>
+    
+    <div class="upload-container">
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" id="game-zip" accept=".zip" style="display: none;">
+            <button type="button" class="upload-button" onclick="document.getElementById('game-zip').click()">Select ZIP File</button>
+            <div class="file-name-display" id="file-name">No file selected</div>
+            <br><br>
+            <button type="submit" class="upload-button" id="upload-button" disabled>Upload Game</button>
+        </form>
+    </div>
+    
+    <div id="message-box" style="display: none;" class="message"></div>
+    
+    <div>
+        <h2>Instructions:</h2>
+        <ol>
+            <li>Package your RPG Maker MZ game as a ZIP file</li>
+            <li>Click "Select ZIP File" to choose your game package</li>
+            <li>Click "Upload Game" to deploy your game</li>
+            <li>Once uploaded, your game will be available at <a href="/play" target="_blank">/play</a></li>
+        </ol>
+    </div>
+
+    <div>
+        <h2>Debug link table:</h2>
+        <ul>
+            <li><a href="/play" target="_blank">/play</a></li>
+            <li><a href="/game-status" target="_blank">/game-status</a></li>
+        </ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>

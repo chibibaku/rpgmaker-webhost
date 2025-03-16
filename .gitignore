@@ -1,0 +1,4 @@
+game/*
+__pychache__/*
+*.pyc
+*.zip
